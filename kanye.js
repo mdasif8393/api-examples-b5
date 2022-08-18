@@ -4,7 +4,9 @@ const loadQuotes = () =>{
     .then(response => response.json())
     .then(data => showQuotes(data))
 }
-loadQuotes()
+
 const showQuotes = (data) =>{
     console.log(data.quote);
+    const p =document.getElementById('section');
+    p.innerText = data.quote;
 }
