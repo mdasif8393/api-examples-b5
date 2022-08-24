@@ -1,10 +1,10 @@
 const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', ()=>{
     const mealName = document.getElementById('search-input').value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
-    .then(res => res.json())
-    .then(data => displayMeals(data.meals))
-    .catch(error => console.log(error))
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`;
+    // fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
+    // .then(res => res.json())
+    // .then(data => displayMeals(data.meals))
 })
 
 const displayMeals = (meals) => {
@@ -45,10 +45,3 @@ const showMeal = (id) =>{
     })
     
 }
-var go = document.getElementById("search-button");
-var txt = document.getElementById("search-input");
-
-txt.addEventListener("keypress", function(event) {
-    if (event.keyCode == 13)
-        go.click();
-});
